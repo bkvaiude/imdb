@@ -26,8 +26,6 @@ id, name
 MovieAwards
 id, movie_id, award_id
 
-ActorAwards
-id, actor_id, award_id
 
 MovieRating
 id, movie_id, rating
