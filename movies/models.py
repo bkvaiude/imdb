@@ -34,3 +34,4 @@ class MovieRating(models.Model):
 class MovieActor(models.Model):
     movie_id = models.ForeignKey(Movie, related_name="mva_movie")
     actor_id = models.ForeignKey(Actor, related_name="mva_actor")
+    role = models.CharField(_("Movie Role"), max_length=255)
