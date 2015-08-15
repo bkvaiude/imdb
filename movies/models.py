@@ -19,7 +19,7 @@ class Movie(models.Model):
 
 class MovieScreenshot(models.Model):
     movie_id = models.ForeignKey(Movie, related_name="movie_screenshots")
-    file = models.ImageField(_("Movie Banner"))
+    file = models.ImageField(_("Movie Banner"), upload_to='movie/banner/')
     is_cover_photo = models.TextField(_("Is this movie's cover photo?"))
     launched_date = models.DateField(_("Movie Release Date"))
     priority = models.IntegerField(_("Movie Screenshot Order"))
@@ -32,7 +32,7 @@ class MovieScreenshot(models.Model):
 
 class MovieVideo(models.Model):
     movie_id = models.ForeignKey(Movie, related_name="movie_trailers")
-    file = models.FileField(_("Movie Trailer"))
+    file = models.FileField(_("Movie Trailer"), upload_to='movie/trailer/')
     launched_date = models.DateField(_("Movie Release Date"))
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
